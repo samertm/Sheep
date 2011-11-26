@@ -1,2 +1,4 @@
 So, I haven't worked on this in a while. I'll get around to it, it's just that the codebase is kinda messy.
-This only compiles on Linux at the moment. sheepgame is the executable.
+I've only tested this on Linux at the moment, but it should be able to compile on any Unix system with gcc. The version of gcc that I'm using is 4.5.2.
+To compile it, you first need to install SDL. The command on debian-based linux systems (including ubuntu) is "sudo apt-get install libsdl1.2-dev libsdl-image1.2-dev libsdl-ttf2.0-dev". There's probably some way to package SDL with this, but I haven't figured it out yet.
+After you've compiled it, either double click "sheepgame" or run the command "./sheepgame" in the terminal. It's actually not much of a game yet hahaha, but I'm getting there.
