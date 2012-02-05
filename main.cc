@@ -10,21 +10,18 @@
 #include <cstdlib>
 #include <vector>
 #include "button.h"
-#include "point.h"
 
 const int kNumLambs = 30;
 
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
-const int SCREEN_BPP = 32;
+const int kScreenWidth = 640;
+const int kScreenHeight = 480;
+const int kScreenBPP = 32;
 
-const int FRAMES_PER_SECOND = 20;
+const int kFPS = 20;
 
 SDL_Surface *background = NULL;
 SDL_Surface *message = NULL;
 SDL_Surface *screen = NULL;
-
-//std::list<point<int>> food;
 
 SDL_Event event;
 
@@ -70,7 +67,7 @@ bool init()
 		return false;
 	}
 
-	screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_SWSURFACE);
+	screen = SDL_SetVideoMode(kScreenWidth, kScreenHeight, kScreenBPP, SDL_SWSURFACE);
 
 	if (screen == NULL)
 	{
@@ -147,7 +144,7 @@ int main( int argc, char* args[] )
 
 	timer fps;
 
-	message = TTF_RenderText_Solid(font, "Welcome to Sheep Fields", textColor);
+	message = TTF_RenderText_Solid(font, "Field of Sheep", textColor);
 	
 	button start(200, 200);
 	
@@ -189,9 +186,9 @@ int main( int argc, char* args[] )
 			return 1;
 
 		        //Cap the frame rate
-        if( fps.get_ticks() < 1000 / FRAMES_PER_SECOND )
+        if( fps.get_ticks() < 1000 / kFPS )
         {
-            SDL_Delay( ( 1000 / FRAMES_PER_SECOND ) - fps.get_ticks() );
+            SDL_Delay( ( 1000 / kFPS ) - fps.get_ticks() );
         }
 	}
 	
