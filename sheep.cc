@@ -6,7 +6,6 @@
 #include <list>
 #include <limits>
 #include <cstdlib>
-#include "point.h"
 
 sheep::sheep(void) : HEIGHT(64), WIDTH(64), SCREEN_HEIGHT(480), SCREEN_WIDTH(640), BOX(10)
 {

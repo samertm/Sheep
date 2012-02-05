@@ -1,4 +1,4 @@
-OBJS = point.o sheep.o timer.o button.o food.o main.o 
+OBJS = sheep.o timer.o button.o main.o
 CC = g++
 DEBUG = -g
 CFLAGS = -Wall -c $(DEBUG)
@@ -8,20 +8,17 @@ LIBS = -lSDL -lSDL_image -lSDL_ttf
 sheepgame : $(OBJS)
 	$(CC) -o sheepgame $(LFLAGS) $(OBJS) $(LIBS)
 
-main.o : sheep.o timer.o button.o point.o
-	$(CC) $(CFLAGS) main.cc
+main.o : sheep.h sheep.cc timer.h button.h
+	$(CC) $(CFLAGS) main.cc $(LIBS)
 
-food.o : 
-	$(CC) $(CFLAGS) food.cc
-
-sheep.o : point.o
+sheep.o : sheep.h sheep.cc
 	$(CC) $(CFLAGS) sheep.cc $(LIBS)
 
-timer.o :
+timer.o : timer.h timer.cc
 	$(CC) $(CFLAGS) timer.cc -lSDL
 
-button.o :
+button.o : button.h button.cc
 	$(CC) $(CFLAGS) button.cc -lSDL -lSDL_image
 
-point.o :
-	$(CC) $(CFLAGS) point.cc
+clean :
+	rm $(OBJS) sheepgame
