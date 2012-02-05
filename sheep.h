@@ -18,7 +18,7 @@ public:
 	int x, y, xVel, yVel, xShow, yShow, hunger, love;
 private:
 	int basey, hops, goingX, goingY, foodX, foodY;
-	const int HEIGHT, SCREEN_HEIGHT, WIDTH, SCREEN_WIDTH, BOX;
+	const int HEIGHT, WIDTH, SCREEN_HEIGHT, SCREEN_WIDTH, BOX;
 	SDL_Surface* image;
 	SDL_Surface* boxy;
 	SDL_Surface* goingbox;
