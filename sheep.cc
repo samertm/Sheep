@@ -144,11 +144,6 @@ void sheep::show(SDL_Surface* screen)
 	blitted = true;
 }
 
-//static void take_item(const std::list<point<int> >& foods)
-//{
-//	sheep::foodcoords = foods;
-//}
-
 void sheep::think()
 {
 	//if (hunger < 25)
